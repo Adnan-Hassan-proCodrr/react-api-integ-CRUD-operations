@@ -1,16 +1,20 @@
-# React + Vite
+# React CRUD GET Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This repository contains a simple React project where I learned how to use the **GET method** to fetch data from an API. This is part of my learning journey in **CRUD operations** in React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What is GET Method?
+- GET is an HTTP method used to **retrieve data** from a server.
+- In this project, we used GET to fetch **posts** from a public API.
+- GET requests **do not change any data** on the server, they only read it.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How I Used GET in React
+1. Created a functional component using `React`.
+2. Used `useState` to store API data.
+3. Used `useEffect` to call the API when the component loads.
+4. Used  `axios` to send a GET request.
+5. Rendered the response data in the UI.
