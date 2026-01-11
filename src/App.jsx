@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from './components/Post'
+import Users from './components/Users'
 
 const App = () => {
 
@@ -16,6 +17,11 @@ const App = () => {
       <hr />
 
       <Post/>
+
+      <hr />
+      <h2>handling User with CRUD</h2>
+      <hr />
+      <Users/>
 
     </>
   )
