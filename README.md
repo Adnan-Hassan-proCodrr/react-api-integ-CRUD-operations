@@ -18,3 +18,22 @@ This repository contains a simple React project where I learned how to use the *
 3. Used `useEffect` to call the API when the component loads.
 4. Used  `axios` to send a GET request.
 5. Rendered the response data in the UI.
+
+## DELETE Method (Today - 11 Jan)
+
+Today I learned how to **delete data from an API** and update the UI in React components.  
+I applied the **DELETE method** on both **Users** and **Posts** components.
+
+---
+
+### 1. Users Component
+
+**Component:** `Users.jsx`  
+**API:** `UserApi.jsx`  
+**API Endpoint:** `https://jsonplaceholder.typicode.com/users`  
+
+**How it works:**
+
+- Fetch all users with **GET**  
+- Delete a user by ID with **DELETE**  
+- Update state to remove the deleted user from the UI  
