@@ -21,3 +21,11 @@ export const deleteUser = (id) =>{
     return userApi.delete(`/users/${id}`)
 }
 
+
+
+
+// post method To add nEw user in list
+
+export const createUser = ( user) =>{
+return  userApi.post("/users/add",user)
+}

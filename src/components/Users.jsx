@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { deleteUser, getUsers } from '../api/UserApi';
 import Button from './Button';
+import AddNewUser from './AddNewUser';
 
 const Users = () => {
 
@@ -11,10 +12,12 @@ const Users = () => {
     setUsers(response.data.users);
   };
 
+  // useEfffect 
   useEffect(() => {
     getTheUsers();
   }, []);
 
+  // handleDelete User
   const handleDeletTheUser = async (id) => {
     const response = await deleteUser(id);
 
@@ -24,29 +27,38 @@ const Users = () => {
     }
   };
 
+
+ 
   return (
+
+ 
+ <>
+ <AddNewUser users={users} setUsers={setUsers}/>
+
     <div className='users-container'>
-      {users.map((user) => (
-        <div className='user-card' key={user.id}>
-          <div className="image">
-            <img src={user.image} alt={user.firstName} />
-          </div>
-
-          <h3>
-            <i><span>userName</span></i>: {user.username}
-          </h3>
-
-          <i><span>FirstName</span>: {user.firstName}</i><br/>
-          <i><span>LastName</span>: {user.lastName}</i>
-
-          <div className="btns">
-            <Button btnText="Delete-User" id="del-btn" onClick={() => handleDeletTheUser(user.id)} />
-            <Button btnText="Edit-User" id="edit-btn" />
-          </div>
-        </div>
+    {users.map((user) => (
+      <div className='user-card' key={user.id}>
+      <div className="image">
+      <img src={user.image} alt={user.firstName} />
+      </div>
+      
+      <h3>
+      <i><span>userName</span></i>: {user.username}
+      </h3>
+      
+      <i><span>FirstName</span>: {user.firstName}</i><br/>
+      <i><span>LastName</span>: {user.lastName}</i>
+      
+      <div className="btns">
+      <Button btnText="Delete-User" id="del-btn" onClick={() => handleDeletTheUser(user.id)} />
+      <Button btnText="Edit-User" id="edit-btn"  />
+      </div>
+      </div>
       ))}
-    </div>
-  );
-};
+      </div>
+     </>
+    );
+  };
+  
 
 export default Users;

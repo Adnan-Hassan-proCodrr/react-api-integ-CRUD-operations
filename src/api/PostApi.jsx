@@ -15,3 +15,11 @@ export const getPost = () => {
 export const deletePost = (id)=>{
     return api.delete(`/posts/${id}`)
 }
+
+
+
+// post method to add new data /Post 
+
+export const postData =  (post) =>{
+    return api.post("/posts",post)
+}

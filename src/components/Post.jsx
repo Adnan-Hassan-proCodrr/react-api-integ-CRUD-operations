@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { deletePost, getPost } from '../api/PostApi';
 import Button from './Button';
+import Form from './Form';
 
 const Post = () => {
   const [data, setData] = useState([]);
@@ -48,6 +49,8 @@ const Post = () => {
 // when data loaded successfully !!! 
 
   return (
+<>
+    <Form data = {data} setData={setData}/>
     <div className='container'>
       {data.map((item,idx) => (
         <div key={idx} className='card'>
@@ -62,6 +65,7 @@ const Post = () => {
         </div>
       ))}
     </div>
+    </>
   );
 
 
