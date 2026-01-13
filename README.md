@@ -32,8 +32,15 @@ I applied the **DELETE method** on both **Users** and **Posts** components.
 **API:** `UserApi.jsx`  
 **API Endpoint:** `https://jsonplaceholder.typicode.com/users`  
 
+
 **How it works:**
 
 - Fetch all users with **GET**  
 - Delete a user by ID with **DELETE**  
 - Update state to remove the deleted user from the UI  
+
+#Post Method  (Today - 13 Jan)
+
+Today i learned how integrate the POST method to create a new post or user in (posts/userList) .
+#creating new user 
+#creating New Post 
