@@ -29,3 +29,11 @@ export const deleteUser = (id) =>{
 export const createUser = ( user) =>{
 return  userApi.post("/users/add",user)
 }
+
+
+
+// update the  User with PUT method
+
+export const updateUser = (id,newUser )=>{
+    return  userApi.put(`/users/${id}`,newUser)
+}

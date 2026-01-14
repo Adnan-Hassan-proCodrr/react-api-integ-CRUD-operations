@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { deletePost, getPost } from '../api/PostApi';
+import { deletePost, getPost, postData } from '../api/PostApi';
 import Button from './Button';
 import Form from './Form';
 
 const Post = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  // getPostData => getting all posts data
+  const [loading, setLoading] = useState(true);
+const [updateData,setUpdateData] = useState({})
+   // getPostData => getting all posts data
   const getPostData = async () => {
     try {
       setLoading(true);
@@ -37,7 +38,8 @@ const Post = () => {
     }
   }
 
-
+// handle Edit Update Post 
+let handleUpdatePost = (item) =>setUpdateData(item);
 
 // condition when data is not loaded!!!..
 
@@ -50,7 +52,13 @@ const Post = () => {
 
   return (
 <>
-    <Form data = {data} setData={setData}/>
+    <Form 
+    data = {data} 
+    setData={setData}  
+     updateData={updateData} 
+    setUpdateData={setUpdateData}
+    />
+
     <div className='container'>
       {data.map((item,idx) => (
         <div key={idx} className='card'>
@@ -59,7 +67,7 @@ const Post = () => {
           <p>{item.body}</p>
 
           <div className="btns">
-            <Button btnText="Edit" id="edit-btn" />
+           <Button btnText="Edit" id="edit-btn" onClick={() => handleUpdatePost(item)} />
             <Button btnText="Delete" id="del-btn"  onClick={()=>hanldleDeleteThePost(item.id)}/>
           </div>
         </div>

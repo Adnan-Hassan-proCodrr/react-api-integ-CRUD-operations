@@ -23,3 +23,8 @@ export const deletePost = (id)=>{
 export const postData =  (post) =>{
     return api.post("/posts",post)
 }
+
+// Update the Post PUT method
+export const updatePost = (id, updatedData) => {
+  return api.put(`https://jsonplaceholder.typicode.com/posts/${id}`, updatedData);
+};
